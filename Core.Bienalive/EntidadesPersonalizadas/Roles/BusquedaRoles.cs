@@ -1,0 +1,12 @@
+﻿namespace Core.Bienalive.EntidadesPersonalizadas.Roles
+{
+    /// <summary>Inicialización de los parametros de la entidad Services.</summary>
+    public class BusquedaRoles
+	{
+        /// <value>Llave primaria de la entidad.</value>
+        public long? Id { get; set; }
+
+        /// <value>Nombre del servicio.</value>
+        public string? Name { get; set; }        
+    }
+}

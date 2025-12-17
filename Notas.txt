@@ -1,0 +1,4 @@
+cd C:\Desarrollo\Microservicios\MicroservicioBienaliveGAU\Api.Bienalive
+dotnet publish -c Release --output ./publish
+docker build -t img-msprogramacion .
+docker-compose -f .\docker-compose.yml up -d

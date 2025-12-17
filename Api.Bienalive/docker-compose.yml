@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+    msbienalive:
+       image: img-msbienalive
+       container_name: ms-bienalive
+       restart: always
+       environment:
+        - ASPNETCORE_ENVIRONMENT=Testing
+        - TZ=America/Bogota
+       ports:
+        - "80:80"

@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Utilitarios", "01. Utilitarios", "{ECE9EEA8-C593-4A81-A4E5-F842C32ABDE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Bienalive", "02. Bienalive", "{BA05644D-31D8-41F3-B29A-33D1611FF03F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. BaseDatos", "01. BaseDatos", "{2C88B627-FA96-4149-ADDD-4952DE640019}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Core", "02. Core", "{99153150-AC61-40AD-A712-61D2D5A08EA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Infrastructure", "03. Infrastructure", "{DD3FDC97-0A18-448B-A367-5C5026A77823}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Api", "04. Api", "{EBE66E91-EEE5-4A28-83AD-5B299B4B9462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilitarios", "..\Utilitarios\utilitarios\Utilitarios.csproj", "{ACE2C355-D69C-4ED0-B6B3-7C072A93952D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Bienalive", "Core.Bienalive\Core.Bienalive.csproj", "{C84FAED5-E6CA-424F-9C40-40179D1902FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Bienalive", "Infrastructure.Bienalive\Infrastructure.Bienalive.csproj", "{7F7BE071-D45D-4842-84D1-B70267A0280C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Bienalive", "Api.Bienalive\Api.Bienalive.csproj", "{9F0DB919-B73B-43FB-B58C-BCF29B55F8D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Docker", "05. Docker", "{A7A003CA-906C-4732-9B08-73B4862C7555}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Development", "01. Development", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		Docker\Development\docker-compose.yml = Docker\Development\docker-compose.yml
+		Docker\Development\Dockerfile = Docker\Development\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Testing", "02. Testing", "{E3C0FB55-2282-45F3-95E6-9B4F035C12DF}"
+	ProjectSection(SolutionItems) = preProject
+		Docker\Testing\docker-compose.yml = Docker\Testing\docker-compose.yml
+		Docker\Testing\Dockerfile = Docker\Testing\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Production", "03. Production", "{1EDFE600-60D3-44B7-AB98-17681880B900}"
+	ProjectSection(SolutionItems) = preProject
+		Docker\Production\docker-compose.yml = Docker\Production\docker-compose.yml
+		Docker\Production\Dockerfile = Docker\Production\Dockerfile
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACE2C355-D69C-4ED0-B6B3-7C072A93952D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE2C355-D69C-4ED0-B6B3-7C072A93952D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE2C355-D69C-4ED0-B6B3-7C072A93952D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE2C355-D69C-4ED0-B6B3-7C072A93952D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84FAED5-E6CA-424F-9C40-40179D1902FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84FAED5-E6CA-424F-9C40-40179D1902FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84FAED5-E6CA-424F-9C40-40179D1902FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84FAED5-E6CA-424F-9C40-40179D1902FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F7BE071-D45D-4842-84D1-B70267A0280C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F7BE071-D45D-4842-84D1-B70267A0280C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F7BE071-D45D-4842-84D1-B70267A0280C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F7BE071-D45D-4842-84D1-B70267A0280C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0DB919-B73B-43FB-B58C-BCF29B55F8D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0DB919-B73B-43FB-B58C-BCF29B55F8D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0DB919-B73B-43FB-B58C-BCF29B55F8D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0DB919-B73B-43FB-B58C-BCF29B55F8D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2C88B627-FA96-4149-ADDD-4952DE640019} = {BA05644D-31D8-41F3-B29A-33D1611FF03F}
+		{99153150-AC61-40AD-A712-61D2D5A08EA4} = {BA05644D-31D8-41F3-B29A-33D1611FF03F}
+		{DD3FDC97-0A18-448B-A367-5C5026A77823} = {BA05644D-31D8-41F3-B29A-33D1611FF03F}
+		{EBE66E91-EEE5-4A28-83AD-5B299B4B9462} = {BA05644D-31D8-41F3-B29A-33D1611FF03F}
+		{ACE2C355-D69C-4ED0-B6B3-7C072A93952D} = {ECE9EEA8-C593-4A81-A4E5-F842C32ABDE6}
+		{C84FAED5-E6CA-424F-9C40-40179D1902FE} = {99153150-AC61-40AD-A712-61D2D5A08EA4}
+		{7F7BE071-D45D-4842-84D1-B70267A0280C} = {DD3FDC97-0A18-448B-A367-5C5026A77823}
+		{9F0DB919-B73B-43FB-B58C-BCF29B55F8D7} = {EBE66E91-EEE5-4A28-83AD-5B299B4B9462}
+		{A7A003CA-906C-4732-9B08-73B4862C7555} = {BA05644D-31D8-41F3-B29A-33D1611FF03F}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {A7A003CA-906C-4732-9B08-73B4862C7555}
+		{E3C0FB55-2282-45F3-95E6-9B4F035C12DF} = {A7A003CA-906C-4732-9B08-73B4862C7555}
+		{1EDFE600-60D3-44B7-AB98-17681880B900} = {A7A003CA-906C-4732-9B08-73B4862C7555}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D35D6D48-4EFD-4993-8D8F-D0488E7EB518}
+	EndGlobalSection
+EndGlobal
