@@ -45,9 +45,63 @@
 
         #region Entidades
         /// <value>Declaración de DbSet para la entidad Services.</value>
-        public virtual DbSet<Services> Servicess { get; set; }
-        public virtual DbSet<ServiceImages> ServiceImages { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Users.</value>
+        public virtual DbSet<Users> Users { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Roles.</value>
         public virtual DbSet<Roles> Roles { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Services.</value>
+        public virtual DbSet<Services> Services { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad ServiceImages.</value>
+        public virtual DbSet<ServiceImages> ServiceImages { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad ProductImages.</value>
+        public virtual DbSet<ProductImages> ProductImages { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Customers.</value>
+        public virtual DbSet<Customers> Customers { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Products.</value>
+        public virtual DbSet<Products> Products { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Appointments.</value>
+        public virtual DbSet<Appointments> Appointments { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad AppointmentStatuses.</value>
+        public virtual DbSet<AppointmentStatuses> AppointmentStatuses { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Bookings.</value>
+        public virtual DbSet<Bookings> Bookings { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Invoices.</value>
+        public virtual DbSet<Invoices> Invoices { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Payments.</value>
+        public virtual DbSet<Payments> Payments { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad PaymentMethods.</value>
+        public virtual DbSet<PaymentMethods> PaymentMethods { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Refunds.</value>
+        public virtual DbSet<Refunds> Refunds { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Sales.</value>
+        public virtual DbSet<Sales> Sales { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad SaleItems.</value>
+        public virtual DbSet<SaleItems> SaleItems { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad Schedules.</value>
+        public virtual DbSet<Schedules> Schedules { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad TeamMembers.</value>
+        public virtual DbSet<TeamMembers> TeamMembers { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad TeamServices.</value>
+        public virtual DbSet<TeamServices> TeamServices { get; set; }
         #endregion
 
     }
