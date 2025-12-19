@@ -9,6 +9,9 @@ namespace Core.Bienalive.EntidadesPersonalizadas.Users
         /// <value>Email.</value>
         public required string Email { get; set; }
 
+        /// <value>Contraseña del usuario.</value>
+        public string Password { get; set; } = string.Empty;
+
         /// <value>Username.</value>
         public required string Username { get; set; }
 

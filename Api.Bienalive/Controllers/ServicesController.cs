@@ -1,10 +1,11 @@
 ﻿namespace Api.Bienalive.Controllers
 {
     using AutoMapper;
-    using Core.Bienalive.Interface;
     using Core.Bienalive.Dto.Services;
     using Core.Bienalive.Entidades;
     using Core.Bienalive.EntidadesPersonalizadas.Services;
+    using Core.Bienalive.Interface;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]
@@ -38,6 +39,7 @@
         /// <param name="parametrosBusqueda">Parametros de entrada para la consulta.</param>
         /// <returns>Lista de Servicess consultadas.</returns>
         [HttpGet]
+        [Authorize]
         [Route("ConsultarServices")]
         public async Task<ActionResult<IEnumerable<ServicesDto>>> ConsultarServices([FromQuery] BusquedaServices parametrosBusqueda)
         {
