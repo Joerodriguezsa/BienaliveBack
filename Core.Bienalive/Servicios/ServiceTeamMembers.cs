@@ -1,4 +1,5 @@
 
+using Core.Bienalive.Dto.TeamMembers;
 using Core.Bienalive.Entidades;
 using Core.Bienalive.EntidadesPersonalizadas.TeamMembers;
 using Core.Bienalive.Interface;
@@ -22,6 +23,38 @@ namespace Core.Bienalive.Servicios
         {
             Expression<Func<TeamMembers, bool>> filtro = parametrosBusqueda.CrearFiltro<TeamMembers>();
             return await _iDLUnitOfWork.DLTeamMembers.ConsultarLista(filtro);
+        }
+
+        public async Task<IEnumerable<TeamMembersDto>> ConsultarTeamMembersComplete(BusquedaTeamMembers parametrosBusqueda)
+        {
+            Expression<Func<TeamMembers, bool>> filtro = parametrosBusqueda.CrearFiltro<TeamMembers>();
+
+            var teamMembers = await _iDLUnitOfWork.DLTeamMembers.ConsultarLista(filtro);
+
+            var userIds = teamMembers
+                .Where(s => s.UserId.HasValue)
+                .Select(s => s.UserId.Value)
+                .Distinct()
+                .ToList();
+
+            var users = await _iDLUnitOfWork.DLUsers.ConsultarLista(u => userIds.Contains(u.Id));
+
+            var resultado =
+                from tm in teamMembers
+                join u in users on tm.UserId equals u.Id into gj
+                from user in gj.DefaultIfEmpty()
+                select new TeamMembersDto
+                {
+                    Id = tm.Id,
+                    Photo = tm.Photo,
+                    UserId = tm.UserId,
+                    Name = user?.Name ?? string.Empty,
+                    Email = user?.Email ?? string.Empty,
+                    Username = user?.Username ?? string.Empty,
+                    RoleId = user?.RoleId
+                };
+
+            return resultado;
         }
 
         public async Task<TeamMembers> CrearTeamMembers(TeamMembers entidad)

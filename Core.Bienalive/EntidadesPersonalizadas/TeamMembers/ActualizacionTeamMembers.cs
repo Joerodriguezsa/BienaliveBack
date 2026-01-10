@@ -6,14 +6,8 @@ namespace Core.Bienalive.EntidadesPersonalizadas.TeamMembers
         /// <value>Id.</value>
         public required long Id { get; set; }
 
-        /// <value>Name.</value>
-        public required string Name { get; set; }
-
-        /// <value>Email.</value>
-        public required string Email { get; set; }
-
-        /// <value>Phone.</value>
-        public string Phone { get; set; }
+        /// <value>Photo.</value>
+        public string Photo { get; set; }
 
         /// <value>UserId.</value>
         public long UserId { get; set; }

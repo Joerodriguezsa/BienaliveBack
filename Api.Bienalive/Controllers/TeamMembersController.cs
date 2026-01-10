@@ -28,6 +28,14 @@ namespace Api.Bienalive.Controllers
             return Ok(_iMapper.Map<List<TeamMembersDto>>(data));
         }
 
+        [HttpGet]
+        [Route("ConsultarTeamMembersComplete")]
+        public async Task<ActionResult<IEnumerable<TeamMembersDto>>> ConsultarTeamMembersComplete([FromQuery] BusquedaTeamMembers filtros)
+        {
+            var data = await _iServiceUnitOfWork.TeamMembers.ConsultarTeamMembersComplete(_iMapper.Map<BusquedaTeamMembers>(filtros));
+            return Ok(_iMapper.Map<List<TeamMembersDto>>(data));
+        }
+
         [HttpPost]
         public async Task<ActionResult<TeamMembersDto>> CrearTeamMembers(CreacionTeamMembers dto)
         {

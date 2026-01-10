@@ -1,5 +1,6 @@
 namespace Core.Bienalive.Interface.Repositorio
 {
+    using Core.Bienalive.Dto.TeamMembers;
     using Core.Bienalive.Entidades;
     using Core.Bienalive.EntidadesPersonalizadas.TeamMembers;
 
@@ -11,6 +12,8 @@ namespace Core.Bienalive.Interface.Repositorio
         /// <param name="parametrosBusqueda">Parametros de entrada para la consulta.</param>
         /// <returns>Lista de TeamMembers consultadas.</returns>
         Task<IEnumerable<TeamMembers>> ConsultarTeamMembers(BusquedaTeamMembers parametrosBusqueda);
+
+        Task<IEnumerable<TeamMembersDto>> ConsultarTeamMembersComplete(BusquedaTeamMembers parametrosBusqueda);
 
         /// <summary>Crea la entidad TeamMembers.</summary>
         /// <param name="TeamMembers">Parametros de entrada para la creacion.</param>
