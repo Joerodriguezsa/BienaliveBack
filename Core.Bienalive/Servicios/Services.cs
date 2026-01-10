@@ -116,13 +116,7 @@ namespace Core.Bienalive.Servicios
 
             registroDB.Name = Services.Name ?? registroDB.Name;            
             registroDB.ShortDescription = Services.ShortDescription ?? registroDB.ShortDescription;
-            registroDB.LongDescription = Services.LongDescription ?? registroDB.LongDescription;            
-            registroDB.Time1 = Services.Time1 == 0 ? registroDB.Time1 : Services.Time1;            
-            registroDB.Price1 = Services.Price1 ?? registroDB.Price1;
-            registroDB.Time2 = Services.Time2 == 0 ? registroDB.Time2 : Services.Time2;
-            registroDB.Price2 = Services.Price2 ?? registroDB.Price2;
-            registroDB.Time3 = Services.Time3 == 0 ? registroDB.Time3 : Services.Time3;
-            registroDB.Price3 = Services.Price3 ?? registroDB.Price3;
+            registroDB.LongDescription = Services.LongDescription ?? registroDB.LongDescription;
             registroDB.Active = Services.Active ?? registroDB.Active;
 
             await ValidarServices(registroDB);
