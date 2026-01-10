@@ -1,5 +1,6 @@
 ﻿using Core.Bienalive.Dto.ServiceImages;
 using Core.Bienalive.Dto.Services;
+using Core.Bienalive.Dto.ServicesTimePrice;
 using Core.Bienalive.EntidadesPersonalizadas.Services;
 using Core.Bienalive.Interface;
 using Core.Bienalive.Interface.Repositorio;
@@ -54,22 +55,18 @@ namespace Core.Bienalive.Servicios
                 .GroupBy(img => img.ServiceId)
                 .ToDictionary(g => g.Key, g => g.ToList());
 
+            var servicesTimePrice = await _iDLUnitOfWork.DLServicesTimePrice.ConsultarLista(tp => ids.Contains(tp.ServiceId));
+
+            var timePricePorServicio = servicesTimePrice
+                .GroupBy(tp => tp.ServiceId)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
             var resultado = servicios.Select(s => new ServicesDto
             {
                 Id = s.Id,
                 Name = s.Name,
                 ShortDescription = s.ShortDescription,
                 LongDescription = s.LongDescription,
-                Time1 = s.Time1,
-                Price1 = s.Price1,
-                Time2 = s.Time2,
-                Price2 = s.Price2,
-                Time3 = s.Time3,
-                Price3 = s.Price3,
-                Time4 = s.Time4,
-                Price4 = s.Price4,
-                Time5 = s.Time5,
-                Price5 = s.Price5,
                 Active = s.Active,
                 ServiceImages = imagenesPorServicio.ContainsKey(s.Id)
                     ? new LinkedList<ServiceImagesDto>(
@@ -80,7 +77,18 @@ namespace Core.Bienalive.Servicios
                             ImageUrl = img.ImageUrl,
                             TipoImagenId = img.TipoImagenId
                         }))
-                    : new LinkedList<ServiceImagesDto>()
+                    : new LinkedList<ServiceImagesDto>(),
+                ServicesTimePrice = timePricePorServicio.ContainsKey(s.Id)
+                    ? new LinkedList<ServicesTimePriceDto>(
+                        timePricePorServicio[s.Id].Select(tp => new ServicesTimePriceDto
+                        {
+                            Id = tp.Id,
+                            ServiceId = tp.ServiceId,
+                            Time = tp.Time,
+                            Price = tp.Price
+                        }))
+                    : new LinkedList<ServicesTimePriceDto>()
+
             });
 
             return resultado;

@@ -39,7 +39,7 @@
         /// <param name="parametrosBusqueda">Parametros de entrada para la consulta.</param>
         /// <returns>Lista de Servicess consultadas.</returns>
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         [Route("ConsultarServices")]
         public async Task<ActionResult<IEnumerable<ServicesDto>>> ConsultarServices([FromQuery] BusquedaServices parametrosBusqueda)
         {

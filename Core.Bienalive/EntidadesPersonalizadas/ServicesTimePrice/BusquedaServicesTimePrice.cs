@@ -3,15 +3,15 @@
     public class BusquedaServicesTimePrice
     {
         /// <value>Llave primaria de la entidad.</value>
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <value>Identificador del servicio.</value>
-        public long ServiceId { get; set; }
+        public long? ServiceId { get; set; }
 
         /// <value>Tiempo asociado al servicio.</value>
-        public int Time { get; set; }
+        public int? Time { get; set; }
 
         /// <value>Precio para el tiempo.</value>
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
     }
 }
