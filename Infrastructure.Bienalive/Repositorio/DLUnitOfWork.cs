@@ -31,6 +31,7 @@
         private ICrudSqlRepositorio<Sales> _dlSales;
         private ICrudSqlRepositorio<SaleItems> _dlSaleItems;
         private ICrudSqlRepositorio<Schedules> _dlSchedules;
+        private ICrudSqlRepositorio<ServicesTimePrice> _dlServicesTimePrice;
         private ICrudSqlRepositorio<TeamMembers> _dlTeamMembers;
         private ICrudSqlRepositorio<TeamServices> _dlTeamServices;
 
@@ -99,6 +100,9 @@
 
         public ICrudSqlRepositorio<Schedules> DLSchedules =>
             _dlSchedules ??= new CrudSqlRepositorio<Schedules>(_conexionBD);
+
+        public ICrudSqlRepositorio<ServicesTimePrice> DLServicesTimePrice =>
+            _dlServicesTimePrice ??= new CrudSqlRepositorio<ServicesTimePrice>(_conexionBD);
 
         public ICrudSqlRepositorio<TeamMembers> DLTeamMembers =>
             _dlTeamMembers ??= new CrudSqlRepositorio<TeamMembers>(_conexionBD);

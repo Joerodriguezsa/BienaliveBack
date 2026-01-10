@@ -58,6 +58,9 @@ namespace Core.Bienalive.Interface
         /// <summary>Inicialización y verificación de la instancia para el servicio Schedules.</summary>
         IDLSchedules Schedules { get; }
 
+        /// <summary>Inicialización y verificación de la instancia para el servicio ServicesTimePrice.</summary>
+        IDLServicesTimePrice ServicesTimePrice { get; }
+
         /// <summary>Inicialización y verificación de la instancia para el servicio TeamMembers.</summary>
         IDLTeamMembers TeamMembers { get; }
 

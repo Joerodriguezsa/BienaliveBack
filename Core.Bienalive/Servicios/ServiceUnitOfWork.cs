@@ -25,6 +25,7 @@
         private IDLSales _sales;
         private IDLSaleItems _saleItems;
         private IDLSchedules _schedules;
+        private IDLServicesTimePrice _servicesTimePrice;
         private IDLTeamMembers _teamMembers;
         private IDLTeamServices _teamServices;
 
@@ -125,6 +126,10 @@
         /// <summary>Inicialización y verificación de la instancia para el servicio Schedules.</summary>
         public IDLSchedules Schedules =>
             _schedules ??= new ServiceSchedules(_iDLUnitOfWork);
+
+        /// <summary>Inicialización y verificación de la instancia para el servicio ServicesTimePrice.</summary>
+        public IDLServicesTimePrice ServicesTimePrice =>
+            _servicesTimePrice ??= new ServiceServicesTimePrice(_iDLUnitOfWork);
 
         /// <summary>Inicialización y verificación de la instancia para el servicio TeamMembers.</summary>
         public IDLTeamMembers TeamMembers =>

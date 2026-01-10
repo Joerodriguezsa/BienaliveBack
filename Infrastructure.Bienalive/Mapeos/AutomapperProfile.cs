@@ -21,6 +21,7 @@
     using Core.Bienalive.Dto.Sales;
     using Core.Bienalive.Dto.SaleItems;
     using Core.Bienalive.Dto.Schedules;
+    using Core.Bienalive.Dto.ServicesTimePrice;
     using Core.Bienalive.Dto.TeamMembers;
     using Core.Bienalive.Dto.TeamServices;
 
@@ -41,6 +42,7 @@
     using Core.Bienalive.EntidadesPersonalizadas.Sales;
     using Core.Bienalive.EntidadesPersonalizadas.SaleItems;
     using Core.Bienalive.EntidadesPersonalizadas.Schedules;
+    using Core.Bienalive.EntidadesPersonalizadas.ServicesTimePrice;
     using Core.Bienalive.EntidadesPersonalizadas.TeamMembers;
     using Core.Bienalive.EntidadesPersonalizadas.TeamServices;
 
@@ -188,6 +190,14 @@
             CreateMap<SchedulesDto, BusquedaSchedules>().ReverseMap();
             CreateMap<Schedules, CreacionSchedules>().ReverseMap();
             CreateMap<Schedules, ActualizacionSchedules>().ReverseMap();
+
+            // =========================
+            // SERVICES TIME PRICE
+            // =========================
+            CreateMap<ServicesTimePrice, ServicesTimePriceDto>().ReverseMap();
+            CreateMap<ServicesTimePriceDto, BusquedaServicesTimePrice>().ReverseMap();
+            CreateMap<ServicesTimePrice, CreacionServicesTimePrice>().ReverseMap();
+            CreateMap<ServicesTimePrice, ActualizacionServicesTimePrice>().ReverseMap();
 
             // =========================
             // TEAM MEMBERS

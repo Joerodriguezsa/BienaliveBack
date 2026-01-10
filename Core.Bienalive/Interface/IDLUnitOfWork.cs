@@ -57,6 +57,9 @@ namespace Core.Bienalive.Interface
         /// <summary>Inicialización y verificación de la instancia del CrudSqlRepositorio - Schedules.</summary>
         ICrudSqlRepositorio<Schedules> DLSchedules { get; }
 
+        /// <summary>Inicialización y verificación de la instancia del CrudSqlRepositorio - ServicesTimePrice.</summary>
+        ICrudSqlRepositorio<ServicesTimePrice> DLServicesTimePrice { get; }
+
         /// <summary>Inicialización y verificación de la instancia del CrudSqlRepositorio - TeamMembers.</summary>
         ICrudSqlRepositorio<TeamMembers> DLTeamMembers { get; }
 

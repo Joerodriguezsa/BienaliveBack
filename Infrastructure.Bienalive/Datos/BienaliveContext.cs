@@ -39,6 +39,7 @@
             modelBuilder.HasAnnotation("Relational:Collation", "Latin1_General_CI_AS");
 
             modelBuilder.ApplyConfiguration(new ServicesMap());
+            modelBuilder.ApplyConfiguration(new ServicesTimePriceMap());
         }
 
         #endregion
@@ -96,6 +97,9 @@
 
         /// <value>Declaración de DbSet para la entidad Schedules.</value>
         public virtual DbSet<Schedules> Schedules { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad ServicesTimePrice.</value>
+        public virtual DbSet<ServicesTimePrice> ServicesTimePrice { get; set; }
 
         /// <value>Declaración de DbSet para la entidad TeamMembers.</value>
         public virtual DbSet<TeamMembers> TeamMembers { get; set; }
