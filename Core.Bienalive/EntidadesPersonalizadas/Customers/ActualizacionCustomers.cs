@@ -18,7 +18,7 @@ namespace Core.Bienalive.EntidadesPersonalizadas.Customers
         /// <value>DateOfBirth.</value>
         public DateOnly DateOfBirth { get; set; }
 
-        /// <value>Gender.</value>
-        public string Gender { get; set; }
+        /// <value>Address.</value>
+        public string Address { get; set; }
     }
 }

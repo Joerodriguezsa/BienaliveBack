@@ -140,5 +140,44 @@
 
         #endregion
 
+        #region Transacciones
+
+        /// <summary>Ejecuta una acción dentro de una transacción.</summary>
+        public async Task ExecuteInTransactionAsync(Func<Task> action)
+        {
+            await using var transaction = await _conexionBD.Database.BeginTransactionAsync();
+
+            try
+            {
+                await action();
+                await transaction.CommitAsync();
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
+        }
+
+        /// <summary>Ejecuta una acción dentro de una transacción y devuelve un resultado.</summary>
+        public async Task<T> ExecuteInTransactionAsync<T>(Func<Task<T>> action)
+        {
+            await using var transaction = await _conexionBD.Database.BeginTransactionAsync();
+
+            try
+            {
+                var result = await action();
+                await transaction.CommitAsync();
+                return result;
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
+        }
+
+        #endregion
+
     }
 }

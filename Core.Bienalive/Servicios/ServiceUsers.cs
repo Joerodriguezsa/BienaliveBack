@@ -33,8 +33,16 @@ namespace Core.Bienalive.Servicios
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(entidad.Email))
+                    throw new ValidationException("Email is required.");
+
                 if (string.IsNullOrWhiteSpace(entidad.Password))
                     throw new ValidationException("Password is required.");
+
+                var usuariosConMismoCorreo = await _iDLUnitOfWork.DLUsers.ConsultarLista(u => u.Email == entidad.Email);
+
+                if (usuariosConMismoCorreo.Any())
+                    throw new ValidationException("The email is already registered.");
 
                 entidad.Password = HashPassword(entidad.Password);
 
@@ -55,7 +63,6 @@ namespace Core.Bienalive.Servicios
 
             registroDB.Name = entidad.Name;
             registroDB.Email = entidad.Email;
-            registroDB.Username = entidad.Username;
             registroDB.RoleId = entidad.RoleId;
             registroDB.Active = entidad.Active;
 

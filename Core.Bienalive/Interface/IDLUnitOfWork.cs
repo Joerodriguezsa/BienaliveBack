@@ -86,5 +86,15 @@ namespace Core.Bienalive.Interface
         Task SaveChangesAsync();
 
         #endregion
+
+        #region Transacciones
+
+        /// <summary>Ejecuta una acción dentro de una transacción.</summary>
+        Task ExecuteInTransactionAsync(Func<Task> action);
+
+        /// <summary>Ejecuta una acción dentro de una transacción y devuelve un resultado.</summary>
+        Task<T> ExecuteInTransactionAsync<T>(Func<Task<T>> action);
+
+        #endregion
     }
 }

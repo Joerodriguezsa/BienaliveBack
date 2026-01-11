@@ -25,9 +25,6 @@ namespace Infrastructure.Bienalive.Datos.Mapeos
             builder.Property(e => e.Email)
                 .HasColumnName("email");
 
-            builder.Property(e => e.Username)
-                .HasColumnName("username");
-
             builder.Property(e => e.Password)
                 .HasColumnName("password");
 

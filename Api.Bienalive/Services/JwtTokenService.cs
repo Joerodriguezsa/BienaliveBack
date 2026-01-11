@@ -18,7 +18,6 @@ namespace Api.Bienalive.Services
         /// <summary>Genera un token JWT para el usuario autenticado.</summary>
         public (string token, DateTime expiresAtUtc) CreateToken(
             long userId,
-            string username,
             string email,
             string role)
         {
@@ -40,7 +39,6 @@ namespace Api.Bienalive.Services
             {
                 new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
                 new Claim(JwtRegisteredClaimNames.Email, email),
-                new Claim("username", username),
                 new Claim("userId", userId.ToString()),
                 new Claim(ClaimTypes.Role, role)
             };

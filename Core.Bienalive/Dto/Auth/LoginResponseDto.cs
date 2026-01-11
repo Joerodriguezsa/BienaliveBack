@@ -10,5 +10,6 @@
 
         /// <value>Rol del usuario.</value>
         public string Role { get; set; } = string.Empty;
+        public long? RoleId { get; set; }
     }
 }

@@ -11,9 +11,6 @@ namespace Core.Bienalive.Dto.Users
         /// <value>Correo electrónico del usuario.</value>
         public string Email { get; set; } = string.Empty;
 
-        /// <value>Nombre de usuario.</value>
-        public string Username { get; set; } = string.Empty;
-
         /// <value>Rol asignado al usuario.</value>
         public long? RoleId { get; set; }
 

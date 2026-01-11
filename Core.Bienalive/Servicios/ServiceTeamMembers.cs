@@ -50,7 +50,6 @@ namespace Core.Bienalive.Servicios
                     UserId = tm.UserId,
                     Name = user?.Name ?? string.Empty,
                     Email = user?.Email ?? string.Empty,
-                    Username = user?.Username ?? string.Empty,
                     RoleId = user?.RoleId
                 };
 

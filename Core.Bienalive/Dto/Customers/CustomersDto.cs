@@ -18,6 +18,6 @@ namespace Core.Bienalive.Dto.Customers
         public DateOnly? DateOfBirth { get; set; }
 
         /// <value>Género del cliente.</value>
-        public string? Gender { get; set; }
+        public string? Address { get; set; }
     }
 }

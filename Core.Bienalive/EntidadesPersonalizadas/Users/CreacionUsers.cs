@@ -12,9 +12,6 @@ namespace Core.Bienalive.EntidadesPersonalizadas.Users
         /// <value>Contraseña del usuario.</value>
         public string Password { get; set; } = string.Empty;
 
-        /// <value>Username.</value>
-        public required string Username { get; set; }
-
         /// <value>RoleId.</value>
         public long RoleId { get; set; }
 

@@ -12,9 +12,6 @@ namespace Core.Bienalive.EntidadesPersonalizadas.Users
         /// <value>Email.</value>
         public required string Email { get; set; }
 
-        /// <value>Username.</value>
-        public required string Username { get; set; }
-
         /// <value>RoleId.</value>
         public long RoleId { get; set; }
 

@@ -19,9 +19,6 @@ namespace Core.Bienalive.Entidades
         /// <value>Rol asignado al usuario.</value>
         public long? RoleId { get; set; }
 
-        /// <value>Nombre de usuario para autenticación.</value>
-        public string Username { get; set; } = string.Empty;
-
         /// <value>Indica si el usuario está activo.</value>
         public bool? Active { get; set; }
     }

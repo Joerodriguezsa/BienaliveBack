@@ -140,5 +140,17 @@
             _teamServices ??= new ServiceTeamServices(_iDLUnitOfWork);
 
         #endregion
+
+        #region Transacciones
+
+        /// <summary>Ejecuta una acción dentro de una transacción.</summary>
+        public Task ExecuteInTransactionAsync(Func<Task> action) =>
+            _iDLUnitOfWork.ExecuteInTransactionAsync(action);
+
+        /// <summary>Ejecuta una acción dentro de una transacción y devuelve un resultado.</summary>
+        public Task<T> ExecuteInTransactionAsync<T>(Func<Task<T>> action) =>
+            _iDLUnitOfWork.ExecuteInTransactionAsync(action);
+
+        #endregion
     }
 }
