@@ -9,14 +9,17 @@ namespace Core.Bienalive.EntidadesPersonalizadas.Bookings
         /// <value>CustomerId.</value>
         public long? CustomerId { get; set; }
 
-        /// <value>ServiceId.</value>
-        public long? ServiceId { get; set; }
-
         /// <value>TeamMemberId.</value>
         public long? TeamMemberId { get; set; }
 
-        /// <value>BookingDate.</value>
-        public DateTime? BookingDate { get; set; }
+        /// <value>ServiceTimePriceId.</value>
+        public long? ServiceTimePriceId { get; set; }
+
+        /// <value>StartAt.</value>
+        public DateTime? StartAt { get; set; }
+
+        /// <value>EndAt.</value>
+        public DateTime? EndAt { get; set; }
 
         /// <value>Status.</value>
         public string? Status { get; set; }

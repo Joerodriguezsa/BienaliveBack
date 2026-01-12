@@ -36,6 +36,13 @@ namespace Core.Bienalive.Servicios
             var registroDB = await _iDLUnitOfWork.DLBookings.ConsultarPorId(entidad.Id)
                 ?? throw new ValidationException($"The Bookings with ID {entidad.Id} does not exist.");
 
+            registroDB.CustomerId = entidad.CustomerId;
+            registroDB.TeamMemberId = entidad.TeamMemberId;
+            registroDB.ServiceTimePriceId = entidad.ServiceTimePriceId;
+            registroDB.StartAt = entidad.StartAt;
+            registroDB.EndAt = entidad.EndAt;
+            registroDB.Status = entidad.Status;
+
             _iDLUnitOfWork.DLBookings.Actualizar(registroDB);
             await _iDLUnitOfWork.SaveChangesAsync();
             return registroDB;
