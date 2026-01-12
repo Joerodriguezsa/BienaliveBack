@@ -77,7 +77,7 @@ namespace Core.Bienalive.Servicios
             return registroDB;
         }
 
-        public async Task<Users> EliminarUsers(int id)
+        public async Task<Users> EliminarUsers(long id)
         {
             var registroDB = await _iDLUnitOfWork.DLUsers.ConsultarPorId(id)
                 ?? throw new ValidationException($"The Users with ID {id} does not exist.");

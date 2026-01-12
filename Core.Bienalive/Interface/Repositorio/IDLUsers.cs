@@ -25,7 +25,7 @@ namespace Core.Bienalive.Interface.Repositorio
         /// <summary>Elimina la Users.</summary>
         /// <param name="Id">Parámetro de entrada para la Eliminacion de la Users.</param>
         /// <returns>Entidad Users Eliminada.</returns>
-        Task<Users> EliminarUsers(int Id);
+        Task<Users> EliminarUsers(long Id);
 
         #endregion
     }

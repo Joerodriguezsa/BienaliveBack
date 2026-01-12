@@ -43,7 +43,7 @@ namespace Api.Bienalive.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<UsersDto>> EliminarUsers(int id)
+        public async Task<ActionResult<UsersDto>> EliminarUsers(long id)
         {
             var entidad = await _iServiceUnitOfWork.Users.EliminarUsers(id);
             return Ok(_iMapper.Map<UsersDto>(entidad));
