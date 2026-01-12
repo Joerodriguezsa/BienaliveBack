@@ -40,6 +40,7 @@
 
             modelBuilder.ApplyConfiguration(new ServicesMap());
             modelBuilder.ApplyConfiguration(new ServicesTimePriceMap());
+            modelBuilder.ApplyConfiguration(new EmployeeServicesMap());
         }
 
         #endregion
@@ -106,6 +107,9 @@
 
         /// <value>Declaración de DbSet para la entidad TeamServices.</value>
         public virtual DbSet<TeamServices> TeamServices { get; set; }
+
+        /// <value>Declaración de DbSet para la entidad EmployeeServices.</value>
+        public virtual DbSet<EmployeeServices> EmployeeServices { get; set; }
         #endregion
 
     }

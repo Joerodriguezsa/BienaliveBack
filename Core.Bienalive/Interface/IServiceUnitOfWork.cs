@@ -67,6 +67,9 @@ namespace Core.Bienalive.Interface
         /// <summary>Inicialización y verificación de la instancia para el servicio TeamServices.</summary>
         IDLTeamServices TeamServices { get; }
 
+        /// <summary>Inicialización y verificación de la instancia para el servicio EmployeeServices.</summary>
+        IDLEmployeeServices EmployeeServices { get; }
+
         #endregion
 
         #region Transacciones

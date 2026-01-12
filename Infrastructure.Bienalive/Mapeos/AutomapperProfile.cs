@@ -24,6 +24,7 @@
     using Core.Bienalive.Dto.ServicesTimePrice;
     using Core.Bienalive.Dto.TeamMembers;
     using Core.Bienalive.Dto.TeamServices;
+    using Core.Bienalive.Dto.EmployeeServices;
 
     using Core.Bienalive.EntidadesPersonalizadas.Services;
     using Core.Bienalive.EntidadesPersonalizadas.ServiceImages;
@@ -45,6 +46,7 @@
     using Core.Bienalive.EntidadesPersonalizadas.ServicesTimePrice;
     using Core.Bienalive.EntidadesPersonalizadas.TeamMembers;
     using Core.Bienalive.EntidadesPersonalizadas.TeamServices;
+    using Core.Bienalive.EntidadesPersonalizadas.EmployeeServices;
 
     /// <summary>Mapeos entre Entidades <-> Dtos y viceversa.</summary>
     public class AutomapperProfile : Profile
@@ -214,6 +216,14 @@
             CreateMap<TeamServicesDto, BusquedaTeamServices>().ReverseMap();
             CreateMap<TeamServices, CreacionTeamServices>().ReverseMap();
             CreateMap<TeamServices, ActualizacionTeamServices>().ReverseMap();
+
+            // =========================
+            // EMPLOYEE SERVICES
+            // =========================
+            CreateMap<EmployeeServices, EmployeeServicesDto>().ReverseMap();
+            CreateMap<EmployeeServicesDto, BusquedaEmployeeServices>().ReverseMap();
+            CreateMap<EmployeeServices, CreacionEmployeeServices>().ReverseMap();
+            CreateMap<EmployeeServices, ActualizacionEmployeeServices>().ReverseMap();
         }
 
         #endregion

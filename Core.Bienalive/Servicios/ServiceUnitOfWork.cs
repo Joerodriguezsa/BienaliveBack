@@ -28,6 +28,7 @@
         private IDLServicesTimePrice _servicesTimePrice;
         private IDLTeamMembers _teamMembers;
         private IDLTeamServices _teamServices;
+        private IDLEmployeeServices _employeeServices;
 
         /// <summary>Declaración del DLUnitOfWork.</summary>
         private readonly IDLUnitOfWork _iDLUnitOfWork;
@@ -138,6 +139,10 @@
         /// <summary>Inicialización y verificación de la instancia para el servicio TeamServices.</summary>
         public IDLTeamServices TeamServices =>
             _teamServices ??= new ServiceTeamServices(_iDLUnitOfWork);
+
+        /// <summary>Inicialización y verificación de la instancia para el servicio EmployeeServices.</summary>
+        public IDLEmployeeServices EmployeeServices =>
+            _employeeServices ??= new ServiceEmployeeServices(_iDLUnitOfWork);
 
         #endregion
 

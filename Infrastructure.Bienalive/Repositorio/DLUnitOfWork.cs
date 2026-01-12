@@ -34,6 +34,7 @@
         private ICrudSqlRepositorio<ServicesTimePrice> _dlServicesTimePrice;
         private ICrudSqlRepositorio<TeamMembers> _dlTeamMembers;
         private ICrudSqlRepositorio<TeamServices> _dlTeamServices;
+        private ICrudSqlRepositorio<EmployeeServices> _dlEmployeeServices;
 
         #endregion
 
@@ -109,6 +110,9 @@
 
         public ICrudSqlRepositorio<TeamServices> DLTeamServices =>
             _dlTeamServices ??= new CrudSqlRepositorio<TeamServices>(_conexionBD);
+
+        public ICrudSqlRepositorio<EmployeeServices> DLEmployeeServices =>
+            _dlEmployeeServices ??= new CrudSqlRepositorio<EmployeeServices>(_conexionBD);
 
         #endregion 
 

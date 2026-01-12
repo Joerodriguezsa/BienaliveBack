@@ -65,6 +65,9 @@ namespace Core.Bienalive.Interface
 
         /// <summary>Inicialización y verificación de la instancia del CrudSqlRepositorio - TeamServices.</summary>
         ICrudSqlRepositorio<TeamServices> DLTeamServices { get; }
+
+        /// <summary>Inicialización y verificación de la instancia del CrudSqlRepositorio - EmployeeServices.</summary>
+        ICrudSqlRepositorio<EmployeeServices> DLEmployeeServices { get; }
         #endregion
 
         #region Liberar Conexión
