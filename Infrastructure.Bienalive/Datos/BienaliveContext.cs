@@ -38,9 +38,37 @@
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Latin1_General_CI_AS");
 
+            // =========================
+            // Mapas (IEntityTypeConfiguration<>)
+            // =========================
+            modelBuilder.ApplyConfiguration(new UsersMap());
+            modelBuilder.ApplyConfiguration(new RolesMap());
+
             modelBuilder.ApplyConfiguration(new ServicesMap());
             modelBuilder.ApplyConfiguration(new ServicesTimePriceMap());
+            modelBuilder.ApplyConfiguration(new ServiceImagesMap());
+
+            modelBuilder.ApplyConfiguration(new ProductsMap());
+            modelBuilder.ApplyConfiguration(new ProductImagesMap());
+
+            modelBuilder.ApplyConfiguration(new CustomersMap());
+
             modelBuilder.ApplyConfiguration(new EmployeeServicesMap());
+            modelBuilder.ApplyConfiguration(new TeamMembersMap());
+            modelBuilder.ApplyConfiguration(new TeamServicesMap());
+
+            modelBuilder.ApplyConfiguration(new SchedulesMap());
+
+            modelBuilder.ApplyConfiguration(new BookingsMap());
+            modelBuilder.ApplyConfiguration(new AppointmentsMap());
+            modelBuilder.ApplyConfiguration(new AppointmentStatusesMap());
+
+            modelBuilder.ApplyConfiguration(new InvoicesMap());
+            modelBuilder.ApplyConfiguration(new PaymentsMap());
+            modelBuilder.ApplyConfiguration(new PaymentMethodsMap());
+            modelBuilder.ApplyConfiguration(new RefundsMap());
+            modelBuilder.ApplyConfiguration(new SalesMap());
+            modelBuilder.ApplyConfiguration(new SaleItemsMap());
         }
 
         #endregion
