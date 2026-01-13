@@ -36,12 +36,18 @@ namespace Core.Bienalive.Servicios
             var registroDB = await _iDLUnitOfWork.DLCustomers.ConsultarPorId(entidad.Id)
                 ?? throw new ValidationException($"The Customers with ID {entidad.Id} does not exist.");
 
+            registroDB.Name = entidad.Name ?? registroDB.Name;
+            registroDB.Email = entidad.Email ?? registroDB.Email;
+            registroDB.Phone = entidad.Phone ?? registroDB.Phone;
+            registroDB.DateOfBirth = entidad.DateOfBirth ?? registroDB.DateOfBirth;
+            registroDB.Address = entidad.Address ?? registroDB.Address;
+
             _iDLUnitOfWork.DLCustomers.Actualizar(registroDB);
             await _iDLUnitOfWork.SaveChangesAsync();
             return registroDB;
         }
 
-        public async Task<Customers> EliminarCustomers(int id)
+        public async Task<Customers> EliminarCustomers(long id)
         {
             var registroDB = await _iDLUnitOfWork.DLCustomers.ConsultarPorId(id)
                 ?? throw new ValidationException($"The Customers with ID {id} does not exist.");
