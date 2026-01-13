@@ -7,6 +7,9 @@ namespace Core.Bienalive.Entidades
         /// <value>Llave primaria de la entidad.</value>
         public long Id { get; set; }
 
+        /// <value>Llave entidad Users.</value>
+        public long UserId { get; set; }
+
         /// <value>Nombre del cliente.</value>
         public string Name { get; set; } = string.Empty;
 

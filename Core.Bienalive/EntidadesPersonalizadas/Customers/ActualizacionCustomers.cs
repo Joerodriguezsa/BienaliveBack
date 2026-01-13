@@ -6,6 +6,9 @@ namespace Core.Bienalive.EntidadesPersonalizadas.Customers
         /// <value>Id.</value>
         public required long Id { get; set; }
 
+        /// <value>Llave entidad Users.</value>
+        public long UserId { get; set; }
+
         /// <value>Name.</value>
         public required string Name { get; set; }
 

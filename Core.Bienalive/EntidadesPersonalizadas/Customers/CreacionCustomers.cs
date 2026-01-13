@@ -3,6 +3,9 @@ namespace Core.Bienalive.EntidadesPersonalizadas.Customers
     /// <summary>Inicialización de los parametros de la entidad Customers.</summary>
     public class CreacionCustomers
     {
+        /// <value>Llave entidad Users.</value>
+        public long UserId { get; set; }
+
         /// <value>Name.</value>
         public required string Name { get; set; }
 

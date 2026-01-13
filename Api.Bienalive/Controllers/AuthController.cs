@@ -90,6 +90,7 @@
                 var customer = await _serviceUnitOfWork.Customers.CrearCustomers(new Customers
                 {
                     Name = request.Name,
+                    UserId = user.Id,
                     Email = request.Email,
                     Phone = request.Phone,
                     DateOfBirth = request.DateOfBirth,
@@ -109,6 +110,7 @@
                     Customer = new CustomersDto
                     {
                         Id = customer.Id,
+                        UserId = customer.UserId,
                         Name = customer.Name,
                         Email = customer.Email,
                         Phone = customer.Phone,
