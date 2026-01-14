@@ -41,7 +41,7 @@ namespace Core.Bienalive.Servicios
             return registroDB;
         }
 
-        public async Task<TeamServices> EliminarTeamServices(int id)
+        public async Task<TeamServices> EliminarTeamServices(long id)
         {
             var registroDB = await _iDLUnitOfWork.DLTeamServices.ConsultarPorId(id)
                 ?? throw new ValidationException($"The TeamServices with ID {id} does not exist.");

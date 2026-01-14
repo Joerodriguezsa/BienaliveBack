@@ -25,7 +25,7 @@ namespace Core.Bienalive.Interface.Repositorio
         /// <summary>Elimina la TeamServices.</summary>
         /// <param name="Id">Parámetro de entrada para la Eliminacion de la TeamServices.</param>
         /// <returns>Entidad TeamServices Eliminada.</returns>
-        Task<TeamServices> EliminarTeamServices(int Id);
+        Task<TeamServices> EliminarTeamServices(long Id);
 
         #endregion
     }

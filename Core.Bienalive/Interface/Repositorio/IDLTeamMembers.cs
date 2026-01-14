@@ -28,7 +28,7 @@ namespace Core.Bienalive.Interface.Repositorio
         /// <summary>Elimina la TeamMembers.</summary>
         /// <param name="Id">Parámetro de entrada para la Eliminacion de la TeamMembers.</param>
         /// <returns>Entidad TeamMembers Eliminada.</returns>
-        Task<TeamMembers> EliminarTeamMembers(int Id);
+        Task<TeamMembers> EliminarTeamMembers(long Id);
 
         #endregion
     }

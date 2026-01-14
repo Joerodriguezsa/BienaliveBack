@@ -43,7 +43,7 @@ namespace Api.Bienalive.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<TeamServicesDto>> EliminarTeamServices(int id)
+        public async Task<ActionResult<TeamServicesDto>> EliminarTeamServices(long id)
         {
             var entidad = await _iServiceUnitOfWork.TeamServices.EliminarTeamServices(id);
             return Ok(_iMapper.Map<TeamServicesDto>(entidad));

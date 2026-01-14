@@ -50,6 +50,9 @@ namespace Core.Bienalive.Servicios
                     UserId = tm.UserId,
                     Name = user?.Name ?? string.Empty,
                     Email = user?.Email ?? string.Empty,
+                    PersonalExperience = tm.PersonalExperience,
+                    Degree = tm.Degree,
+                    AboutMe = tm.AboutMe,
                     RoleId = user?.RoleId
                 };
 
@@ -68,12 +71,17 @@ namespace Core.Bienalive.Servicios
             var registroDB = await _iDLUnitOfWork.DLTeamMembers.ConsultarPorId(entidad.Id)
                 ?? throw new ValidationException($"The TeamMembers with ID {entidad.Id} does not exist.");
 
+            registroDB.Photo = entidad.Photo ?? registroDB.Photo;
+            registroDB.PersonalExperience = entidad.PersonalExperience ?? registroDB.PersonalExperience;
+            registroDB.Degree = entidad.Degree ?? registroDB.Degree;
+            registroDB.AboutMe = entidad.AboutMe ?? registroDB.AboutMe;
+
             _iDLUnitOfWork.DLTeamMembers.Actualizar(registroDB);
             await _iDLUnitOfWork.SaveChangesAsync();
             return registroDB;
         }
 
-        public async Task<TeamMembers> EliminarTeamMembers(int id)
+        public async Task<TeamMembers> EliminarTeamMembers(long id)
         {
             var registroDB = await _iDLUnitOfWork.DLTeamMembers.ConsultarPorId(id)
                 ?? throw new ValidationException($"The TeamMembers with ID {id} does not exist.");

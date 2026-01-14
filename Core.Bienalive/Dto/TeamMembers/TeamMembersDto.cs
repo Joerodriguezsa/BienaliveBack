@@ -8,10 +8,19 @@ namespace Core.Bienalive.Dto.TeamMembers
         public long Id { get; set; }
 
         /// <value>Photo.</value>
-        public string? Photo { get; set; }
+        public string? Photo { get; set; }        
 
         /// <value>Identificador del usuario asociado.</value>
         public long? UserId { get; set; }
+
+        /// <value>personalExperience.</value>
+        public string? PersonalExperience { get; set; }
+
+        /// <value>degree.</value>
+        public string? Degree { get; set; }
+
+        /// <value>aboutme.</value>
+        public string? AboutMe { get; set; }
 
         /// Datos de la entidad Users asociada.
         /// <value>Nombre del usuario.</value>
