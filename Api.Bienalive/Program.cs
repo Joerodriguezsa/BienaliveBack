@@ -15,13 +15,13 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
 
-// Definir la polÌtica de CORS
+// Definir la pol√≠tica de CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins", policy =>
     {
         policy.AllowAnyOrigin()  // Permite cualquier origen
-              .AllowAnyMethod()  // Permite cualquier mÈtodo (GET, POST, etc.)
+              .AllowAnyMethod()  // Permite cualquier m√©todo (GET, POST, etc.)
               .AllowAnyHeader(); // Permite cualquier encabezado
     });
 });
@@ -29,7 +29,7 @@ builder.Services.AddCors(options =>
 // Automapper - registro de mapeos.
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-// ConfiguraciÛn Swagger.
+// Configuraci√≥n Swagger.
 builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -39,7 +39,7 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 
-    // ConfiguraciÛn para usar un Bearer Token
+    // Configuraci√≥n para usar un Bearer Token
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -70,7 +70,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // =======================
-// JWT - AutenticaciÛn
+// JWT - Autenticaci√≥n
 // =======================
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -97,6 +97,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<JwtTokenService>();
+builder.Services.Configure<BlobStorageOptions>(
+    builder.Configuration.GetSection(BlobStorageOptions.SectionName));
+builder.Services.AddScoped<BlobStorageService>();
 
 //Configuracion de errores global.
 builder.Services.AddTransient<GloblalExceptionHandlingMiddleware>();
@@ -104,17 +107,17 @@ builder.Services.AddTransient<GloblalExceptionHandlingMiddleware>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle.
 builder.Services.AddEndpointsApiExplorer();
 
-// ConfiguraciÛn Singleton.
+// Configuraci√≥n Singleton.
 builder.Services.AddSingleton(builder.Configuration);
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-// AÒadir servicio de Application Insights
+// A√±adir servicio de Application Insights
 //builder.Services.AddApplicationInsightsTelemetry(options =>
 //{
 //    options.ConnectionString = builder.Configuration["ApplicationInsights:ConnectionString"];
 //});
 
-// ConfiguraciÛn de logging
+// Configuraci√≥n de logging
 //builder.Logging.AddApplicationInsights(
 //    configureTelemetryConfiguration: (config) =>
 //        config.ConnectionString = builder.Configuration["ApplicationInsights:ConnectionString"],
@@ -124,21 +127,21 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 // Configurar filtros de logging
 builder.Logging.AddFilter<ApplicationInsightsLoggerProvider>("", LogLevel.Information);
 
-// InyecciÛn de dependencias.
+// Inyecci√≥n de dependencias.
 builder.Services.InyeccionDependencias();
 
-// ConfiguraciÛn del Contexto.
+// Configuraci√≥n del Contexto.
 builder.Services.AgregarContextoBD(builder.Configuration);
 
 // Agregar HttpClient para solicitudes internas.
 builder.Services.AddHttpClient();
 
-// app => Define una clase que proporciona los mecanismos para configurar la solicitud de una aplicaciÛn.
+// app => Define una clase que proporciona los mecanismos para configurar la solicitud de una aplicaci√≥n.
 var app = builder.Build();
 
 // Configurar la zona horaria predeterminada a Colombia (SA Pacific Standard Time)
 var colombiaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SA Pacific Standard Time");
-TimeZoneInfo.ClearCachedData(); // Limpia la cachÈ de zonas horarias, opcional
+TimeZoneInfo.ClearCachedData(); // Limpia la cach√© de zonas horarias, opcional
 app.Services.GetService<IServiceProvider>().GetService<ILogger<Program>>()
     ?.LogInformation($"Zona horaria configurada: {colombiaTimeZone.DisplayName}");
 
@@ -148,16 +151,16 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-// ConfiguraciÛn de los Cors.
+// Configuraci√≥n de los Cors.
 app.UseCors("AllowAllOrigins");
 
-// ConfiguraciÛn Swagger.
+// Configuraci√≥n Swagger.
 app.UseSwagger();
 
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bienalive API v1");
-    c.RoutePrefix = string.Empty; // Esto hace que Swagger UI estÈ disponible en la raÌz
+    c.RoutePrefix = string.Empty; // Esto hace que Swagger UI est√© disponible en la ra√≠z
 });
 
 app.UseHttpsRedirection();
