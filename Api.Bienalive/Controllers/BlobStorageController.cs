@@ -34,11 +34,16 @@ public class BlobStorageController : ControllerBase
         string requestedFileName = string.IsNullOrWhiteSpace(request.NombreArchivo)
             ? originalFileName
             : Path.GetFileName(request.NombreArchivo);
+        string originalExtension = Path.GetExtension(originalFileName);
 
         if (string.IsNullOrWhiteSpace(requestedFileName))
         {
-            string extension = Path.GetExtension(originalFileName);
-            requestedFileName = $"{Guid.NewGuid():N}{extension}";
+            requestedFileName = $"{Guid.NewGuid():N}{originalExtension}";
+        }
+        else if (string.IsNullOrWhiteSpace(Path.GetExtension(requestedFileName))
+            && !string.IsNullOrWhiteSpace(originalExtension))
+        {
+            requestedFileName = $"{requestedFileName}{originalExtension}";
         }
 
         string carpeta = request.Carpeta?.Trim().Trim('/');
