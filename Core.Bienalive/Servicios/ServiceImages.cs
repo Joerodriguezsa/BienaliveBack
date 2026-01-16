@@ -74,7 +74,7 @@ namespace Core.Bienalive.Servicios
         /// <summary>Elimina la ServiceImages.</summary>
         /// <param name="ServiceImagesId">Parametro de entrada para la Eliminacion de la ServiceImages.</param>
         /// <returns>Entidad ServiceImages Eliminada.</returns>
-        public async Task<Entidades.ServiceImages> EliminarServiceImages(int ServiceImagesId)
+        public async Task<Entidades.ServiceImages> EliminarServiceImages(long ServiceImagesId)
         {
 
             Entidades.ServiceImages registroDB = await _iDLUnitOfWork.DLServiceImages.ConsultarPorId(ServiceImagesId)

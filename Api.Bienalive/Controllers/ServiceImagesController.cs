@@ -73,7 +73,7 @@
         /// <returns>Entidad ServiceImagesSinNovedadDto Eliminada.</returns>
         [HttpDelete]
         [Route("EliminarServiceImages")]
-        public async Task<ActionResult<ServiceImagesDto>> EliminarServiceImages(int Id)
+        public async Task<ActionResult<ServiceImagesDto>> EliminarServiceImages(long Id)
         {
             ServiceImages ServiceImages = await _iServiceUnitOfWork.ServiceImages.EliminarServiceImages(Id);
             return Ok(_iMapper.Map<ServiceImagesDto>(ServiceImages));

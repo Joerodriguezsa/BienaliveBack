@@ -131,7 +131,7 @@ namespace Core.Bienalive.Servicios
         /// <summary>Elimina la Services.</summary>
         /// <param name="ServicesId">Parametro de entrada para la Eliminacion de la Services.</param>
         /// <returns>Entidad Services Eliminada.</returns>
-        public async Task<Entidades.Services> EliminarServices(int ServicesId)
+        public async Task<Entidades.Services> EliminarServices(long ServicesId)
         {
 
             Entidades.Services registroDB = await _iDLUnitOfWork.DLServices.ConsultarPorId(ServicesId)

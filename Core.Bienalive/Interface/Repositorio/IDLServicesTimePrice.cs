@@ -25,7 +25,7 @@
         /// <summary>Elimina la ServicesTimePrice.</summary>
         /// <param name="id">Parámetro de entrada para la Eliminacion de la ServicesTimePrice.</param>
         /// <returns>Entidad ServicesTimePrice Eliminada.</returns>
-        Task<ServicesTimePrice> EliminarServicesTimePrice(int id);
+        Task<ServicesTimePrice> EliminarServicesTimePrice(long id);
 
         #endregion
     }

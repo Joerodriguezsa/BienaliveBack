@@ -25,7 +25,7 @@
 		/// <summary>Elimina la ServiceImages.</summary>
 		/// <param name="Id">Parámetro de entrada para la Eliminacion de la ServiceImages.</param>
 		/// <returns>Entidad ServiceImages Eliminada.</returns>
-		Task<ServiceImages> EliminarServiceImages(int Id);
+		Task<ServiceImages> EliminarServiceImages(long Id);
 		#endregion
 
 	}

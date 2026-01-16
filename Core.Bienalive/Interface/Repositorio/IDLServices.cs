@@ -26,7 +26,7 @@
 		/// <summary>Elimina la Services.</summary>
 		/// <param name="Id">Parámetro de entrada para la Eliminacion de la Services.</param>
 		/// <returns>Entidad Services Eliminada.</returns>
-		Task<Services> EliminarServices(int Id);
+		Task<Services> EliminarServices(long Id);
 
         Task<IEnumerable<ServicesDto>> ConsultarServicesWithImages(BusquedaServices parametrosBusqueda);
         #endregion

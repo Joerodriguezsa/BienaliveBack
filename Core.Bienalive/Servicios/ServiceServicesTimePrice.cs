@@ -36,12 +36,15 @@ namespace Core.Bienalive.Servicios
             var registroDB = await _iDLUnitOfWork.DLServicesTimePrice.ConsultarPorId(servicesTimePrice.Id)
                 ?? throw new ValidationException($"The ServicesTimePrice with ID {servicesTimePrice.Id} does not exist.");
 
+            registroDB.Time = servicesTimePrice.Time ?? registroDB.Time;
+            registroDB.Price = servicesTimePrice.Price ?? registroDB.Price;
+
             _iDLUnitOfWork.DLServicesTimePrice.Actualizar(registroDB);
             await _iDLUnitOfWork.SaveChangesAsync();
             return registroDB;
         }
 
-        public async Task<ServicesTimePrice> EliminarServicesTimePrice(int id)
+        public async Task<ServicesTimePrice> EliminarServicesTimePrice(long id)
         {
             var registroDB = await _iDLUnitOfWork.DLServicesTimePrice.ConsultarPorId(id)
                 ?? throw new ValidationException($"The ServicesTimePrice with ID {id} does not exist.");

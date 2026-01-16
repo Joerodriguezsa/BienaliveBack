@@ -43,7 +43,7 @@ namespace Api.Bienalive.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<ServicesTimePriceDto>> EliminarServicesTimePrice(int id)
+        public async Task<ActionResult<ServicesTimePriceDto>> EliminarServicesTimePrice(long id)
         {
             var entidad = await _iServiceUnitOfWork.ServicesTimePrice.EliminarServicesTimePrice(id);
             return Ok(_iMapper.Map<ServicesTimePriceDto>(entidad));

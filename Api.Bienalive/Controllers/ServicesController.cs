@@ -86,7 +86,7 @@
         /// <returns>Entidad ServicesSinNovedadDto Eliminada.</returns>
         [HttpDelete]
         [Route("EliminarServices")]
-        public async Task<ActionResult<ServicesDto>> EliminarServices(int Id)
+        public async Task<ActionResult<ServicesDto>> EliminarServices(long Id)
         {
             Services Services = await _iServiceUnitOfWork.ServicesService.EliminarServices(Id);
             return Ok(_iMapper.Map<ServicesDto>(Services));
