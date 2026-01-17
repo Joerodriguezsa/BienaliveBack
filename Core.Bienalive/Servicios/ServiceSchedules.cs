@@ -36,6 +36,8 @@ namespace Core.Bienalive.Servicios
             var registroDB = await _iDLUnitOfWork.DLSchedules.ConsultarPorId(entidad.Id)
                 ?? throw new ValidationException($"The Schedules with ID {entidad.Id} does not exist.");
 
+
+
             _iDLUnitOfWork.DLSchedules.Actualizar(registroDB);
             await _iDLUnitOfWork.SaveChangesAsync();
             return registroDB;
