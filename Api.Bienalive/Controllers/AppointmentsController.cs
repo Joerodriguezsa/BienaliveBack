@@ -43,7 +43,7 @@ namespace Api.Bienalive.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<AppointmentsDto>> EliminarAppointments(int id)
+        public async Task<ActionResult<AppointmentsDto>> EliminarAppointments(long id)
         {
             var entidad = await _iServiceUnitOfWork.Appointments.EliminarAppointments(id);
             return Ok(_iMapper.Map<AppointmentsDto>(entidad));

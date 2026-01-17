@@ -41,7 +41,7 @@ namespace Core.Bienalive.Servicios
             return registroDB;
         }
 
-        public async Task<AppointmentStatuses> EliminarAppointmentStatuses(int id)
+        public async Task<AppointmentStatuses> EliminarAppointmentStatuses(long id)
         {
             var registroDB = await _iDLUnitOfWork.DLAppointmentStatuses.ConsultarPorId(id)
                 ?? throw new ValidationException($"The AppointmentStatuses with ID {id} does not exist.");

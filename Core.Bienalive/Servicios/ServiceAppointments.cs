@@ -35,13 +35,13 @@ namespace Core.Bienalive.Servicios
         {
             var registroDB = await _iDLUnitOfWork.DLAppointments.ConsultarPorId(entidad.Id)
                 ?? throw new ValidationException($"The Appointments with ID {entidad.Id} does not exist.");
-
+                        
             _iDLUnitOfWork.DLAppointments.Actualizar(registroDB);
             await _iDLUnitOfWork.SaveChangesAsync();
             return registroDB;
         }
 
-        public async Task<Appointments> EliminarAppointments(int id)
+        public async Task<Appointments> EliminarAppointments(long id)
         {
             var registroDB = await _iDLUnitOfWork.DLAppointments.ConsultarPorId(id)
                 ?? throw new ValidationException($"The Appointments with ID {id} does not exist.");

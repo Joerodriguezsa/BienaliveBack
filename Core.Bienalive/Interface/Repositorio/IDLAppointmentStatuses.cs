@@ -13,7 +13,7 @@ namespace Core.Bienalive.Interface.Repositorio
 
         Task<AppointmentStatuses> ActualizarAppointmentStatuses(AppointmentStatuses entidad);
 
-        Task<AppointmentStatuses> EliminarAppointmentStatuses(int id);
+        Task<AppointmentStatuses> EliminarAppointmentStatuses(long id);
 
         #endregion
     }

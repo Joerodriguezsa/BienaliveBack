@@ -12,7 +12,10 @@ namespace Core.Bienalive.Dto.Appointments
         public long? ServiceId { get; set; }
 
         /// <value>Fecha y hora de la cita.</value>
-        public DateTime AppointmentDate { get; set; }
+        public DateTime AppointmentDateStart { get; set; }
+
+        /// <value>Fecha y hora de la cita.</value>
+        public DateTime AppointmentDateEnd { get; set; }
 
         /// <value>Identificador del miembro del equipo.</value>
         public long? TeamMemberId { get; set; }

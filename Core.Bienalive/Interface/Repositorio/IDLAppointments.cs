@@ -25,7 +25,7 @@ namespace Core.Bienalive.Interface.Repositorio
         /// <summary>Elimina la Appointments.</summary>
         /// <param name="Id">Parámetro de entrada para la Eliminacion de la Appointments.</param>
         /// <returns>Entidad Appointments Eliminada.</returns>
-        Task<Appointments> EliminarAppointments(int Id);
+        Task<Appointments> EliminarAppointments(long Id);
 
         #endregion
     }

@@ -9,8 +9,11 @@ namespace Core.Bienalive.EntidadesPersonalizadas.Appointments
         /// <value>ServiceId.</value>
         public long ServiceId { get; set; }
 
-        /// <value>AppointmentDate.</value>
-        public required DateTime AppointmentDate { get; set; }
+        /// <value>Fecha y hora de la cita.</value>
+        public DateTime AppointmentDateStart { get; set; }
+
+        /// <value>Fecha y hora de la cita.</value>
+        public DateTime AppointmentDateEnd { get; set; }
 
         /// <value>TeamMemberId.</value>
         public long TeamMemberId { get; set; }

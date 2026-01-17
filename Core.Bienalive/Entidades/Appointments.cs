@@ -13,8 +13,11 @@ namespace Core.Bienalive.Entidades
         /// <value>Identificador del servicio asociado a la cita.</value>
         public long? ServiceId { get; set; }
 
-        /// <value>Fecha y hora programada de la cita.</value>
-        public DateTime AppointmentDate { get; set; }
+        /// <value>Fecha y hora de la cita.</value>
+        public DateTime AppointmentDateStart { get; set; }
+
+        /// <value>Fecha y hora de la cita.</value>
+        public DateTime AppointmentDateEnd { get; set; }
 
         /// <value>Identificador del miembro del equipo asignado.</value>
         public long? TeamMemberId { get; set; }
