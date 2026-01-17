@@ -25,7 +25,7 @@ namespace Core.Bienalive.Interface.Repositorio
         /// <summary>Elimina la Schedules.</summary>
         /// <param name="Id">Parámetro de entrada para la Eliminacion de la Schedules.</param>
         /// <returns>Entidad Schedules Eliminada.</returns>
-        Task<Schedules> EliminarSchedules(int Id);
+        Task<Schedules> EliminarSchedules(long Id);
 
         #endregion
     }

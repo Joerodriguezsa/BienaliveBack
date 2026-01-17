@@ -41,7 +41,7 @@ namespace Core.Bienalive.Servicios
             return registroDB;
         }
 
-        public async Task<Schedules> EliminarSchedules(int id)
+        public async Task<Schedules> EliminarSchedules(long id)
         {
             var registroDB = await _iDLUnitOfWork.DLSchedules.ConsultarPorId(id)
                 ?? throw new ValidationException($"The Schedules with ID {id} does not exist.");
