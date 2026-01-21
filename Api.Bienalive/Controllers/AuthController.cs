@@ -37,7 +37,7 @@
                     Email = request.Email
                 });
 
-            var usuario = usuarios.FirstOrDefault();
+            Users? usuario = usuarios.FirstOrDefault();
             if (usuario == null)
                 return Unauthorized("Invalid Email or no exists.");
 
@@ -68,7 +68,10 @@
                 Token = token,
                 ExpiresAtUtc = expires,
                 RoleId = usuario.RoleId,
-                Role = roleName
+                Role = roleName,
+                UserId = usuario.Id,
+                Name = usuario.Name,
+                Email = usuario.Email
             });
         }
 
