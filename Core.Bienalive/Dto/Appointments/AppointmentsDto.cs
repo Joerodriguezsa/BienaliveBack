@@ -17,6 +17,9 @@ namespace Core.Bienalive.Dto.Appointments
         /// <value>Fecha y hora de la cita.</value>
         public DateTime AppointmentDateEnd { get; set; }
 
+        /// <value>Precio para el tiempo.</value>
+        public decimal Price { get; set; }
+
         /// <value>Identificador del miembro del equipo.</value>
         public long? TeamMemberId { get; set; }
 

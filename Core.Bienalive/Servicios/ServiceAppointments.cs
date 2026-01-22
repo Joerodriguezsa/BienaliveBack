@@ -26,8 +26,16 @@ namespace Core.Bienalive.Servicios
 
         public async Task<Appointments> CrearAppointments(Appointments entidad)
         {
-            await _iDLUnitOfWork.DLAppointments.Adicionar(entidad);
-            await _iDLUnitOfWork.SaveChangesAsync();
+            try
+            {
+                await _iDLUnitOfWork.DLAppointments.Adicionar(entidad);
+                await _iDLUnitOfWork.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
             return entidad;
         }
 
