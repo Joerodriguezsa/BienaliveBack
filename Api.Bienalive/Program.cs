@@ -100,6 +100,9 @@ builder.Services.AddScoped<JwtTokenService>();
 builder.Services.Configure<BlobStorageOptions>(
     builder.Configuration.GetSection(BlobStorageOptions.SectionName));
 builder.Services.AddScoped<BlobStorageService>();
+builder.Services.Configure<EmailOptions>(
+    builder.Configuration.GetSection(EmailOptions.SectionName));
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 //Configuracion de errores global.
 builder.Services.AddTransient<GloblalExceptionHandlingMiddleware>();
@@ -172,4 +175,3 @@ app.UseMiddleware<GloblalExceptionHandlingMiddleware>();
 app.MapControllers();
 
 app.Run();
-
